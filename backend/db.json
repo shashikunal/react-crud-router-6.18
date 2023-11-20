@@ -1,0 +1,9 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "nodejs",
+      "trainer": "shashi"
+    }
+  ]
+}

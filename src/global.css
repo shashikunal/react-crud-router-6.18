@@ -1,0 +1,114 @@
+ @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+ :root{
+    --base-bg-color:#e6e6fa70;
+    --base-btn-color:#6300a3;
+    --base-font-family:'Noto Sans', sans-serif;
+    --base-font-color:#111;
+    --base-bg-white:#fff
+    
+   
+ }
+
+*{
+    box-sizing:border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background: var(--base-bg-color);
+   font-family: var(--base-font-family);
+   color: var(--base-font-color);
+}
+
+#navbar {
+    background: var(--base-bg-white);
+    height: 70px;
+    border-bottom: 1px solid #eee;
+}
+
+#navbar > .nav-container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    height: inherit;
+    align-items: center;
+}
+
+#navbar > .nav-container > div {
+    flex-basis: 50%;
+}
+#navbar > .nav-container > div:nth-child(2){
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logo a {
+    display: flex;
+    text-decoration: none;
+    font-size: 25px;
+    
+}
+
+.logo a span:first-child{
+    color: #ed264f;
+    padding: 0 7px 0 0px;
+    font-weight: bold;
+}
+
+.logo a span:last-child {
+    color: rgb(46, 5, 78);
+    font-weight: 100;
+}
+
+#course-container article {
+    display: flex;
+    height: 100vh;
+    gap: 5px;
+}
+
+#course-container > article .sidebar {
+    flex-basis: 20%;
+    border-right: 1px solid #eee;
+    background-color: #6300a3;
+}
+
+#course-container > article .content {
+    flex-basis: 80%;
+    padding: 20px;
+    background-color: transparent;
+   
+}
+
+.sidebar ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar ul li a {
+   background-color: #29262e5c;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    border-bottom: 1px solid #673AB7;
+} 
+
+
+.sidebar ul li a:hover {
+    background-color:#30064c;
+    transition: ease all 0.7s;
+    transform:translate(2);
+    
+}
+.sidebar .active {
+    background-color: #ed264f;
+    color: #fff;
+}
+
+.sidebar .active:hover {
+    background: #d63354;
+}
