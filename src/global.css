@@ -5,7 +5,8 @@
     --base-btn-color:#6300a3;
     --base-font-family:'Noto Sans', sans-serif;
     --base-font-color:#111;
-    --base-bg-white:#fff
+    --base-bg-white:#fff;
+    --base-crimson-color:#ed264f;
     
    
  }
@@ -62,19 +63,19 @@ body {
     font-weight: 100;
 }
 
-#course-container article {
+#course-container  > article {
     display: flex;
     height: 100vh;
     gap: 5px;
 }
 
-#course-container > article .sidebar {
+#course-container article .sidebar {
     flex-basis: 20%;
     border-right: 1px solid #eee;
     background-color: #6300a3;
 }
 
-#course-container > article .content {
+#course-container  .content-wrapper {
     flex-basis: 80%;
     padding: 20px;
     background-color: transparent;
@@ -111,4 +112,128 @@ body {
 
 .sidebar .active:hover {
     background: #d63354;
+}
+
+.content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 20px;
+    min-height: 250px;
+    background: #fff;
+
+}
+
+.authBlock {
+    padding-top: 7em;
+}
+
+.authBlock h1 {
+    padding: 20px;
+    color: var(--base-crimson-color);
+    font-size: 2em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 100;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.authBlock form {
+    padding: 20px;
+    background: #fff;
+    width: 400px;
+}
+
+.authBlock label {
+    width: 100%;
+    padding: 10px 0;
+    color: #888;
+    font-size: 16px;
+    font-weight: 200;
+    display: block;
+}
+
+.authBlock input {
+    width: 100%;
+    border: 1px solid #999999ac;
+    color: #6300a3;
+    border-radius: 5px;
+    outline: none;
+    padding: 10px;
+}
+
+.authBlock button {
+    background-color: var(--base-btn-color);
+    color: var(--base-bg-white);
+    font-weight: 400;
+    width: 100%;
+    border-radius: 5px;
+    margin: 20px 0;
+    padding: 10px;
+    cursor: pointer;
+     border: 1px solid var(--base-btn-color);
+
+}
+
+
+.authBlock button:hover {
+    background: #4d2568;
+}
+
+.spinner {
+  display: grid;
+  place-items: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 180deg at 50% 50%,
+    rgba(82, 0, 255, 0) 0deg,
+    #4d2568 360deg
+  );
+  animation: spin 2s infinite linear;
+}
+.spinner::before {
+  content: "";
+  border-radius: 50%;
+  width: 80%;
+  height: 80%;
+  background-color: var(--base-bg-white);
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+
+.courses {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.courses .list {
+    flex-basis: 24%;
+    background: #fff;
+    border: 1px solid #efefef;
+    min-height: 100px;
+    border-radius: 5px;
+    margin: 20px 0 0;
+    padding: 10px;
+}
+
+.courses h1 {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--base-btn-color);
+    padding: 10px 0;
+    text-transform: capitalize;
+    border-bottom: 1px solid #eee;
+}
+.courses p {
+    font-size: 15px;
+    font-weight: 100;
+    padding: 10px 0;
 }

@@ -8,8 +8,10 @@ const Home = () => {
         <aside className="sidebar">
           <SidebarMenu />
         </aside>
-        <aside className="content">
-          <Outlet />
+        <aside className="content-wrapper">
+          <div className="content-inner">
+            <Outlet />
+          </div>
         </aside>
       </article>
     </section>

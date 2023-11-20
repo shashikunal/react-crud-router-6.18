@@ -4,6 +4,36 @@
       "id": 1,
       "title": "nodejs",
       "trainer": "shashi"
+    },
+    {
+      "title": "react",
+      "trainer": "dixith",
+      "id": 2
+    },
+    {
+      "title": "aws",
+      "trainer": "shashi",
+      "id": 3
+    },
+    {
+      "title": "html",
+      "trainer": "pooja",
+      "id": 4
+    },
+    {
+      "title": "Java",
+      "trainer": "dixith",
+      "id": 5
+    },
+    {
+      "title": "spring boot",
+      "trainer": "vinod",
+      "id": 6
+    },
+    {
+      "title": "hibernate",
+      "trainer": "manoj",
+      "id": 7
     }
   ]
 }
