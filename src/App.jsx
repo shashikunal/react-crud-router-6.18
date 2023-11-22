@@ -4,6 +4,8 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import CreateCourse from "./components/courses/CreateCourse";
 import AllCourses from "./components/courses/AllCourses";
+import CourseDetails from "./components/courses/CourseDetails";
+import EditCourse from "./components/courses/EditCourse";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,14 @@ const router = createBrowserRouter([
           {
             path: "create-course",
             element: <CreateCourse />,
+          },
+          {
+            path: ":id",
+            element: <CourseDetails />,
+          },
+          {
+            path: "edit/:id",
+            element: <EditCourse />,
           },
         ],
       },

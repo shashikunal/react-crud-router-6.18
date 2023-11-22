@@ -125,7 +125,7 @@ body {
 }
 
 .authBlock {
-    padding-top: 7em;
+    padding-top: 3em;
 }
 
 .authBlock h1 {
@@ -141,8 +141,24 @@ body {
 .authBlock form {
     padding: 20px;
     background: #fff;
-    width: 400px;
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
 }
+
+.form-group {
+    flex-basis: 49%;
+}
+.desc_block {
+    flex-basis: 100%;
+}
+
+.at {
+    flex-basis: auto;
+    display: contents;
+}
+
 
 .authBlock label {
     width: 100%;
@@ -153,7 +169,7 @@ body {
     display: block;
 }
 
-.authBlock input {
+.authBlock input , .authBlock textarea {
     width: 100%;
     border: 1px solid #999999ac;
     color: #6300a3;
@@ -183,8 +199,8 @@ body {
 .spinner {
   display: grid;
   place-items: center;
-  width: 150px;
-  height: 150px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
   background: conic-gradient(
     from 180deg at 50% 50%,
@@ -196,8 +212,8 @@ body {
 .spinner::before {
   content: "";
   border-radius: 50%;
-  width: 80%;
-  height: 80%;
+  width: 90%;
+  height: 90%;
   background-color: var(--base-bg-white);
 }
 
@@ -207,6 +223,14 @@ body {
   }
 }
 
+
+.spinner-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width: 100%;
+}
 
 .courses {
     display: flex;
@@ -236,4 +260,74 @@ body {
     font-size: 15px;
     font-weight: 100;
     padding: 10px 0;
+}
+
+.view_more {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.view_more a {
+   padding: 5px 10px;
+    border: 1px solid #E91E63;
+    color: #E91E63;
+    text-transform: capitalize;
+    font-size: 14px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.view_more  a:hover {
+    background-color: #d63354;
+    color: #fff;
+}
+
+
+.course_details header {
+    background: #fff;
+    padding: 20px;
+    margin: 10px 0;
+}
+
+.course_details main {
+    background: transparent;
+    padding: 20px;
+}
+
+.course_details footer {
+    background-color: #fff;
+    padding: 20px;
+}
+
+.course_details main p {
+    padding: 10px 0;
+    border-bottom: 1px solid #efefef;
+    margin: 10px 0;
+}
+
+.course_details header a.btn-help {
+    float: right;
+    text-transform: lowercase;
+    text-decoration: none;
+    padding: 3px 20px;
+  
+}
+
+.course_details header .edit {
+background-color: #6300a3;
+border: 1px solid #4d2568;
+color: #fff;
+}
+
+.course_details header .delete {
+background-color: #ed264f;
+border: 1px solid #E91E63;
+color: #fff;
+}
+
+.course_details header .back {
+background-color: #fff;
+border: 1px solid #eee;
+color: #4d2568;
 }

@@ -1,17 +1,26 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 
-const CreateCourse = () => {
+const EditCourse = () => {
   let navigate = useNavigate();
+  let { id } = useParams();
   let [state, setState] = useState({
     title: "",
     trainer: "",
     description: "",
-    createdAt: "",
+    updatedAt: "",
     isLoading: false,
   });
   let { title, trainer, isLoading, description, createdAt, updatedAt } = state;
+
+  useEffect(() => {
+    let fetchCourse = async () => {
+      let { data } = await axios.get(`http://localhost:5000/courses/${id}`);
+      setState(data);
+    };
+    fetchCourse();
+  }, [id]);
   let handleChange = e => {
     let { name, value } = e.target;
     setState({ ...state, [name]: value });
@@ -19,18 +28,10 @@ const CreateCourse = () => {
   let handleSubmit = async e => {
     e.preventDefault();
     try {
-      let payload = { title, trainer, description, createdAt };
+      let payload = { title, trainer, description, updatedAt };
 
-      await axios.post("http://localhost:5000/courses", payload);
+      await axios.put(`http://localhost:5000/courses/${id}`, payload);
 
-      //BUILT IN WINDOW FETCH API WITH POST
-      // await window.fetch("http://localhost:5000/courses", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(payload),
-      // });
       navigate("/");
     } catch (error) {
       console.log(error);
@@ -39,7 +40,7 @@ const CreateCourse = () => {
   return (
     <section className="content">
       <main className="authBlock">
-        <h1>Create Course</h1>
+        <h1>Update Course</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label htmlFor="title">Title</label>
@@ -89,7 +90,7 @@ const CreateCourse = () => {
           </div>
 
           <div className="form-group1">
-            <button>{isLoading ? "loading" : "Create course"}</button>
+            <button>{isLoading ? "loading" : "update course"}</button>
           </div>
         </form>
       </main>
@@ -97,4 +98,4 @@ const CreateCourse = () => {
   );
 };
 
-export default CreateCourse;
+export default EditCourse;
