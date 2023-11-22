@@ -5,6 +5,20 @@
       "trainer": "shashi",
       "description": "Node.js® is an open-source, cross-platform JavaScript runtime environment.",
       "id": 1
+    },
+    {
+      "title": "python",
+      "trainer": "dixith",
+      "description": "Python is a high-level, general-purpose programming language. Its design philosophy emphasizes code readability with the use of significant indentation. Python is dynamically typed and garbage-collected. It supports multiple programming paradigms, including structured, object-oriented and functional programming",
+      "createdAt": "2023-11-23",
+      "id": 3
+    },
+    {
+      "title": "Javascript",
+      "trainer": "shashi",
+      "description": "A call stack is a way for the JavaScript engine to keep track of its place in code that calls multiple functions. It has the information on what function is currently being run and what functions are invoked from within that function…",
+      "createdAt": "2023-11-22",
+      "id": 4
     }
   ]
 }

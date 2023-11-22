@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import courseServices from "../../services/CourseService";
+import toast from "react-hot-toast";
 
 const EditCourse = () => {
   let navigate = useNavigate();
@@ -16,7 +18,7 @@ const EditCourse = () => {
 
   useEffect(() => {
     let fetchCourse = async () => {
-      let { data } = await axios.get(`http://localhost:5000/courses/${id}`);
+      let data = await courseServices.fetchId(id);
       setState(data);
     };
     fetchCourse();
@@ -29,9 +31,8 @@ const EditCourse = () => {
     e.preventDefault();
     try {
       let payload = { title, trainer, description, updatedAt };
-
-      await axios.put(`http://localhost:5000/courses/${id}`, payload);
-
+      await courseServices.updateService(id, payload);
+      toast.success("course has been updated successfully...");
       navigate("/");
     } catch (error) {
       console.log(error);

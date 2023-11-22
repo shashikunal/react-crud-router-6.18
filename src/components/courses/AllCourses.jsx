@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import Spinner from "../../pages/spinner/Spinner";
 import Course from "./Course";
+import courseServices from "../../services/CourseService";
 
 const AllCourses = () => {
   let [state, setState] = useState(null);
   let fetchCourses = async () => {
-    let { data } = await axios.get("http://localhost:5000/courses");
+    let data = await courseServices.fetchService();
     setState(data);
   };
 

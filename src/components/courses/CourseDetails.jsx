@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Moment from "moment";
-import axios from "axios";
+import courseServices from "../../services/CourseService";
 
 /* eslint-disable react/prop-types */
 const CourseDetails = () => {
@@ -12,7 +12,7 @@ const CourseDetails = () => {
 
   let deleteCourse = async id => {
     if (window.confirm() === true) {
-      await axios.delete(`http://localhost:5000/courses/${id}`);
+      await courseServices.deleteService(id);
       window.location.assign("/"); //force refresh to clean cache in the browser
     } else {
       navigate("/");

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import courseServices from "../../services/CourseService";
+import toast from "react-hot-toast";
 
 const CreateCourse = () => {
   let navigate = useNavigate();
@@ -11,7 +12,8 @@ const CreateCourse = () => {
     createdAt: "",
     isLoading: false,
   });
-  let { title, trainer, isLoading, description, createdAt, updatedAt } = state;
+
+  let { title, trainer, isLoading, description, createdAt } = state;
   let handleChange = e => {
     let { name, value } = e.target;
     setState({ ...state, [name]: value });
@@ -20,17 +22,9 @@ const CreateCourse = () => {
     e.preventDefault();
     try {
       let payload = { title, trainer, description, createdAt };
+      courseServices.createService(payload);
+      toast.success("successfully course has been created...");
 
-      await axios.post("http://localhost:5000/courses", payload);
-
-      //BUILT IN WINDOW FETCH API WITH POST
-      // await window.fetch("http://localhost:5000/courses", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(payload),
-      // });
       navigate("/");
     } catch (error) {
       console.log(error);
