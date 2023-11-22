@@ -19,6 +19,20 @@
       "description": "A call stack is a way for the JavaScript engine to keep track of its place in code that calls multiple functions. It has the information on what function is currently being run and what functions are invoked from within that function…",
       "createdAt": "2023-11-22",
       "id": 4
+    },
+    {
+      "title": "dotnet",
+      "trainer": "girish",
+      "description": "The .NET platform is a free and open-source, managed computer software framework for Windows, Linux, and macOS operating systems. The project is mainly developed by Microsoft employees by way of the .NET Foundation and is released under an MIT License",
+      "createdAt": "2023-11-22",
+      "id": 5
+    },
+    {
+      "title": "springboot",
+      "trainer": "manoj",
+      "description": "Spring Runtime offers support and binaries for OpenJDK™, Spring, and Apache Tomcat® in one simple subscription. Learn more. Upcoming events.",
+      "createdAt": "2023-11-22",
+      "id": 6
     }
   ]
 }

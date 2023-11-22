@@ -331,3 +331,31 @@ background-color: #fff;
 border: 1px solid #eee;
 color: #4d2568;
 }
+
+.searchBlock {
+    width: 99%;
+}
+
+.searchBlock input {
+    background: #fff;
+    width: 99%;
+    padding: 16px 23px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #eee;
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.searchIcon {
+    position: relative;
+}
+.searchIcon svg {
+    position: absolute;
+    right: 10px;
+    top: -1px;
+    font-size: 25px;
+    color: #9C27B0;
+    font-weight: 100;
+}
