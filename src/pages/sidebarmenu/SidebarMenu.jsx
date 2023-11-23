@@ -19,6 +19,14 @@ const SidebarMenu = () => {
           Create Course
         </NavLink>
       </li>
+      <li>
+        <NavLink
+          to="/users"
+          className={({ isActive }) => (isActive ? "active" : "")}
+        >
+          users
+        </NavLink>
+      </li>
     </ul>
   );
 };

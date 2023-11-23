@@ -359,3 +359,49 @@ color: #4d2568;
     color: #9C27B0;
     font-weight: 100;
 }
+
+/* user block css starts here */
+
+.userBlock {
+    background: #fff;
+    width: 100%;
+    padding: 10px;
+}
+
+.userBlock h2 {
+    color: var(--base-btn-color);
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 10px 0;
+}
+
+.userBlock table {
+    border: 1px solid #efefef;
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+.userBlock tr , td {
+    border: 1px solid #efefef;
+    padding: 10px;
+    
+}
+
+.userBlock thead {
+   background-color: #6300a3;
+    color: #fff;
+    padding: 10px;
+    height: 20px;
+    padding: 20px;
+    height: 50px;
+    border: 1px solid #fff;
+}
+
+.userBlock img {
+    width: 100px;
+    height: 100px;
+    border-radius:5px;
+
+}
+    
+    

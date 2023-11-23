@@ -6,6 +6,7 @@ import CreateCourse from "./components/courses/CreateCourse";
 import AllCourses from "./components/courses/AllCourses";
 import CourseDetails from "./components/courses/CourseDetails";
 import EditCourse from "./components/courses/EditCourse";
+import AllUsers from "./components/users/Allusers";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
           {
             path: "edit/:id",
             element: <EditCourse />,
+          },
+          {
+            path: "users",
+            element: <AllUsers />,
           },
         ],
       },

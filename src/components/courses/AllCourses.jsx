@@ -4,23 +4,6 @@ import Course from "./Course";
 import courseServices from "../../services/CourseService";
 import SearchCourses from "../searchFilter/SearchCourses";
 
-// let obj = {
-//   courses: {
-//     frontend: {
-//       libraries: {
-//         meta: {
-//           popular: {
-//             title: "react",
-//           },
-//         },
-//       },
-//     },
-//   },
-// };
-
-// let accessData = obj?.courses?.libraries?.meta?.popular?.title;
-// console.log(accessData);
-
 const AllCourses = () => {
   let [state, setState] = useState(null);
   let [searchTerm, setSearchTerm] = useState("");
@@ -46,7 +29,6 @@ const AllCourses = () => {
       }
     })
     .map(course => <Course key={course.id} {...course} />);
-  console.log(FilteredCourse);
 
   return (
     <>
