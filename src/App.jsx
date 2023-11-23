@@ -7,6 +7,7 @@ import AllCourses from "./components/courses/AllCourses";
 import CourseDetails from "./components/courses/CourseDetails";
 import EditCourse from "./components/courses/EditCourse";
 import AllUsers from "./components/users/Allusers";
+import SingleUser from "./components/users/SingleUser";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
           {
             path: "users",
             element: <AllUsers />,
+          },
+          {
+            path: "/users/:id",
+            element: <SingleUser />,
           },
         ],
       },

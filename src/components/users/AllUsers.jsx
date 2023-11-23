@@ -1,8 +1,11 @@
 import useFetchUser from "../../hooks/UserHook";
 import Spinner from "../../pages/spinner/Spinner";
+import { Link } from "react-router-dom";
 
 const AllUsers = () => {
-  let { users, isLoading } = useFetchUser();
+  let {
+    users: { users, isLoading },
+  } = useFetchUser();
 
   return (
     <>
@@ -24,6 +27,7 @@ const AllUsers = () => {
                     <th>name</th>
                     <th>email</th>
                     <th>role</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -36,6 +40,11 @@ const AllUsers = () => {
                       <td>{user.name}</td>
                       <td>{user.email}</td>
                       <td>{user.role}</td>
+                      <td>
+                        <Link to={`/users/${user.id}`} className="nav-link">
+                          view more
+                        </Link>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
