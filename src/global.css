@@ -418,4 +418,53 @@ color: #4d2568;
     color: #673AB7;
 }
 
-    
+.navbar {
+    flex-basis:80%;
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    align-items: center;
+}
+.navbar ul li a {
+    text-decoration: none;
+    padding: 10px 15px;
+    color: #111;
+    text-transform: capitalize;
+    border-radius: 5px;
+}
+.navbar ul li a:hover {
+    color: #d63354;
+}
+
+.navbar ul li a.active {
+    background-color: #6300a3;
+    color: #fff;
+}
+.log-btn {
+      background: #E91E63;
+    color: #fff;
+    padding: 12px 15px;
+    display: inline-grid;
+    border-radius: 5px;
+    border: 1px solid #cf296199;
+    cursor: pointer;
+    font-weight: 700;
+    text-transform: capitalize;
+    margin: 10px;
+}
+
+
+.navbar figure {
+    width: 50px;
+    height: 50px;
+
+}
+
+.navbar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+}

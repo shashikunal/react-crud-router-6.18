@@ -14,10 +14,9 @@
       "id": 3
     },
     {
-      "title": "Javascript",
+      "title": "Javascript1",
       "trainer": "shashi",
       "description": "A call stack is a way for the JavaScript engine to keep track of its place in code that calls multiple functions. It has the information on what function is currently being run and what functions are invoked from within that function…",
-      "createdAt": "2023-11-22",
       "id": 4
     },
     {
@@ -33,6 +32,13 @@
       "description": "Spring Runtime offers support and binaries for OpenJDK™, Spring, and Apache Tomcat® in one simple subscription. Learn more. Upcoming events.",
       "createdAt": "2023-11-22",
       "id": 6
+    },
+    {
+      "title": "react router",
+      "trainer": "shashi",
+      "description": "react router dom is very imaportant in react app",
+      "createdAt": "2023-11-24",
+      "id": 7
     }
   ]
 }

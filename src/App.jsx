@@ -8,6 +8,10 @@ import CourseDetails from "./components/courses/CourseDetails";
 import EditCourse from "./components/courses/EditCourse";
 import AllUsers from "./components/users/Allusers";
 import SingleUser from "./components/users/SingleUser";
+import Register from "./components/auth/Register";
+import Login from "./components/auth/Login";
+import PrivateRoute from "./helpers/PrivateRoute";
+import PublicRoute from "./helpers/PublicRoute";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +21,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+
         children: [
           {
             index: true,
@@ -24,25 +29,61 @@ const router = createBrowserRouter([
           },
           {
             path: "create-course",
-            element: <CreateCourse />,
+            element: (
+              <PrivateRoute>
+                <CreateCourse />
+              </PrivateRoute>
+            ),
           },
           {
             path: ":id",
-            element: <CourseDetails />,
+            element: (
+              <PrivateRoute>
+                <CourseDetails />
+              </PrivateRoute>
+            ),
           },
           {
             path: "edit/:id",
-            element: <EditCourse />,
+            element: (
+              <PrivateRoute>
+                <EditCourse />
+              </PrivateRoute>
+            ),
           },
           {
             path: "users",
-            element: <AllUsers />,
+            element: (
+              <PrivateRoute>
+                <AllUsers />
+              </PrivateRoute>
+            ),
           },
           {
             path: "/users/:id",
-            element: <SingleUser />,
+            element: (
+              <PrivateRoute>
+                <SingleUser />
+              </PrivateRoute>
+            ),
           },
         ],
+      },
+      {
+        path: "/signup",
+        element: (
+          <PublicRoute>
+            <Register />
+          </PublicRoute>
+        ),
+      },
+      {
+        path: "/login",
+        element: (
+          <PublicRoute>
+            <Login />
+          </PublicRoute>
+        ),
       },
       {
         path: "*",

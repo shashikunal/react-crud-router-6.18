@@ -9,8 +9,6 @@ const SingleUser = () => {
   useEffect(() => {
     fetchSingleUser(id);
   }, []);
-  console.log(users.singleUser);
-  // let { email, avatar, createdAt, updatedAt, role, name } = singleUser;
 
   return (
     <>
