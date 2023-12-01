@@ -12,6 +12,10 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./helpers/PrivateRoute";
 import PublicRoute from "./helpers/PublicRoute";
+import Modal from "./helpers/modals/Modal";
+import axios from "axios";
+import FetchGitUsers from "./components/users/FetchGitUsers";
+import CreateProduct from "./components/products/CreateProduct";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +38,46 @@ const router = createBrowserRouter([
                 <CreateCourse />
               </PrivateRoute>
             ),
+          },
+          {
+            path: "git-users",
+            element: (
+              <PrivateRoute>
+                <FetchGitUsers />
+              </PrivateRoute>
+            ),
+            loader: async () => {
+              let { data } = await axios.get("https://api.github.com/users");
+              return data;
+            },
+          },
+          //data api with mutation /create or update
+          {
+            path: "create-product",
+            element: (
+              <PrivateRoute>
+                <CreateProduct />
+              </PrivateRoute>
+            ),
+            action: async ({ request }) => {
+              let data = await request.formData();
+              let name = data.get("name");
+              let email = data.get("email");
+
+              let password = data.get("password");
+              let avatar = data.get("avatar");
+              let payload = { name, email, password, avatar };
+              return await window.fetch(
+                "https://api.escuelajs.co/api/v1/users/",
+                {
+                  method: "POST",
+                  body: JSON.stringify(payload),
+                  headers: {
+                    "content-type": "application/json",
+                  },
+                }
+              );
+            },
           },
           {
             path: ":id",
@@ -81,7 +125,9 @@ const router = createBrowserRouter([
         path: "/login",
         element: (
           <PublicRoute>
-            <Login />
+            <Modal>
+              <Login />
+            </Modal>
           </PublicRoute>
         ),
       },

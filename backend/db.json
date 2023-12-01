@@ -14,7 +14,7 @@
       "id": 3
     },
     {
-      "title": "Javascript1",
+      "title": "xxxx",
       "trainer": "shashi",
       "description": "A call stack is a way for the JavaScript engine to keep track of its place in code that calls multiple functions. It has the information on what function is currently being run and what functions are invoked from within that function…",
       "id": 4
@@ -39,6 +39,13 @@
       "description": "react router dom is very imaportant in react app",
       "createdAt": "2023-11-24",
       "id": 7
+    },
+    {
+      "title": "selenium",
+      "trainer": "taranath",
+      "description": "selenium is ui testing framework",
+      "createdAt": "2023-11-24",
+      "id": 8
     }
   ]
 }

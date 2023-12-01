@@ -3,11 +3,14 @@ import "./global.css";
 import App from "./App";
 import UserProvider from "./context/UserContext";
 import AuthProvider from "./context/AuthContext";
+import ModalProvider from "./context/ModalContext";
 
 createRoot(document.getElementById("root")).render(
   <AuthProvider>
     <UserProvider>
-      <App />
+      <ModalProvider>
+        <App />
+      </ModalProvider>
     </UserProvider>
   </AuthProvider>
 );

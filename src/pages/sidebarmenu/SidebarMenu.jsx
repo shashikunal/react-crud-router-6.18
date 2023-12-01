@@ -24,6 +24,22 @@ const SidebarMenu = () => {
             users
           </NavLink>
         </li>
+        <li>
+          <NavLink
+            to="/git-users"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            Git users
+          </NavLink>
+        </li>
+        <li>
+          <NavLink
+            to="/create-product"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
+            create product
+          </NavLink>
+        </li>
       </Fragment>
     );
   };
